@@ -6,7 +6,7 @@ function Header() {
     const onMenuClick = (item) => {
         navigate(`/${item.key}`);
       };
-    return (<div style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }}> 
+    return (<div style={{boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)' }}> 
            <Menu mode="horizontal"  onClick={onMenuClick} items={
             [
                 {label: "Home",key: ""},
