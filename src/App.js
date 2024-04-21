@@ -6,6 +6,7 @@ import MensClothing from './Pages/MensClothing'
 import WomensClothing from './Pages/WomensClothing'
 import Electronics from './Pages/Electronics'
 import Jewelery from './Pages/Jewelery'
+import Login from './Pages/Login'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => (
@@ -13,11 +14,12 @@ const App = () => (
 <Router>
     <Header/>
       <Routes>
-        <Route path="/" element={<Products />} />
+        <Route path="/home" element={<Products />} />
         <Route path="/jewelery" element={<Jewelery />} />
         <Route path="/mensclothing" element={<MensClothing />} />
         <Route path="/womensclothing" element={<WomensClothing />} />
         <Route path="/electronics" element={<Electronics />} />
+        <Route path="/" element={<Login/>}/>
       </Routes>
     <Footer/>
     </Router>

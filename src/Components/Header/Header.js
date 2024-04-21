@@ -9,7 +9,7 @@ function Header() {
     return (<div style={{boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)' }}> 
            <Menu mode="horizontal"  onClick={onMenuClick} items={
             [
-                {label: "Home",key: ""},
+                {label: "Home",key: "home"},
                 {label: "Electronics",key:"electronics"},
                 {label: "Men's Clothing",key:"mensclothing"},
                 {label: "Women's Clothing",key:"womensclothing"},
