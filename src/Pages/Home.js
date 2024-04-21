@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '../Slices/ProductSlice';
 import { setSortOrder } from '../Slices/SortOrderSlice';
 import getSortedItems from '../Utilities/SortItems';
+import Header from '../Components/Header/Header'
 
 
 const Products = () => {
@@ -21,6 +22,7 @@ const Products = () => {
 
   return (
     <>
+    <Header/>
      <Select style={{width: '13%', margin:'10px'}}
           defaultValue={sortorder}
           onChange={(value)=>{

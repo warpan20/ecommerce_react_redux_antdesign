@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const App = () => (
 <div style={{ display: 'flex', flexDirection: 'column' }}>
 <Router>
-    <Header/>
       <Routes>
         <Route path="/home" element={<Products />} />
         <Route path="/jewelery" element={<Jewelery />} />

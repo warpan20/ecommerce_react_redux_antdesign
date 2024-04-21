@@ -4,6 +4,7 @@ import { Badge,Card, Image, List, Select } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSortOrder } from '../Slices/SortOrderSlice';
 import getSortedItems from '../Utilities/SortItems';
+import Header from '../Components/Header/Header'
 
 
 const Jewelery = () => {
@@ -13,6 +14,7 @@ const Jewelery = () => {
 
   return (
     <>
+    <Header/>
         <Select style={{width: '13%', margin:'10px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
