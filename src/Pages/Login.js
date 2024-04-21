@@ -1,4 +1,4 @@
-import {Form, Button, Typography, Checkbox, Input} from 'antd'
+import {Form, Button, Typography, Checkbox, Input, Card} from 'antd'
 import { useNavigate } from "react-router-dom";
 
 
@@ -9,9 +9,8 @@ function Login() {
         navigate(`/home`);
       };
     return <div style={{display:'flex', justifyContent:'right'}}>
-        
-        <div style={{ width:'20%',border: '5px solid #d9d9d9',
-    borderColor:'rgba(33, 150, 243, 0.2)',padding:'5px',margin:'5%', display: 'flex',justifyContent:'right'}}> <Form 
+        <Card style={{marginTop:'5%',marginRight:'5%', width:'30%'}}>
+        <div style={{ width:'80%',padding:'5px',margin:'5%', display: 'flex',justifyContent:'right'}}> <Form 
     style={{ width:'100%', height:'40%', display:'flex', alignItems:'flex-end', flexDirection:'column'}} onFinish={onSubmit}>
     <Form.Item
       rules={[
@@ -45,6 +44,7 @@ function Login() {
     </Button>
   </Form>
   </div>
+  </Card>
   </div>
 }
 
