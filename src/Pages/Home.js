@@ -21,7 +21,7 @@ const Products = () => {
 
   return (
     <>
-     <Select style={{width: '13%', margin:'5px'}}
+     <Select style={{width: '13%', margin:'10px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
@@ -45,7 +45,7 @@ const Products = () => {
             },
           ]}
         ></Select>
-      <List style={{margin:'10px'}}
+      <List
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder)}
         renderItem={(product, index) => (
