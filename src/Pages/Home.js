@@ -5,19 +5,23 @@ import { setProducts } from '../Slices/ProductSlice';
 import { setSortOrder } from '../Slices/SortOrderSlice';
 import getSortedItems from '../Utilities/SortItems';
 import Header from '../Components/Header/Header'
+import { setLoading } from '../Slices/LoadingSlice';
 
 
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const sortorder = useSelector((state) => state.sortOrder.sortOrder);
+  const loading = useSelector((state) => state.loadingStatus.loadingStatus);
   useEffect(() => {
     const fetchProducts = async () => {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json(); 
         dispatch(setProducts(data));
+        dispatch(setLoading(false));
     };
-    fetchProducts();
+    //Note: setTimeout the below code is kept to show the loading functionality
+    setTimeout(fetchProducts, 1000);
   }, []);
 
   return (
@@ -48,6 +52,7 @@ const Products = () => {
           ]}
         ></Select>
       <List
+        loading={loading}
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder)}
         renderItem={(product, index) => (

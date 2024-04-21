@@ -11,6 +11,7 @@ const Electronics = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const sortorder = useSelector((state) => state.sortOrder.sortOrder);
+  const loading = useSelector((state) => state.loadingStatus.loadingStatus);
   return (
     <>
     <Header/>
@@ -39,6 +40,7 @@ const Electronics = () => {
           ]}
         ></Select>
       <List
+      loading = {loading}
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder).filter(product => product.category === 'electronics')}
         renderItem={(product, index) => (

@@ -11,6 +11,7 @@ const Jewelery = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const sortorder = useSelector((state) => state.sortOrder.sortOrder);
+  const loading = useSelector((state) => state.loadingStatus.loadingStatus);
 
   return (
     <>
@@ -40,6 +41,7 @@ const Jewelery = () => {
           ]}
         ></Select>
       <List 
+      loading={loading}
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder).filter(product => product.category === 'jewelery')}
         renderItem={(product, index) => (
