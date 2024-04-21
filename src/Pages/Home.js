@@ -1,7 +1,7 @@
 import React , {useEffect} from 'react';
 import { Card, Image, List } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProducts } from '../../Slices/ProductSlice';
+import { setProducts } from '../Slices/ProductSlice';
 
 
 const Products = () => {
