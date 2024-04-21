@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Card, Image, List } from 'antd';
+import { Badge,Card, Image, List } from 'antd';
 import { useSelector } from 'react-redux';
 
 
@@ -14,13 +14,19 @@ const WomansClothing = () => {
         dataSource={products.filter(product => product.category === "women's clothing")}
         renderItem={(product, index) => (
           <List.Item key={index}>
+               <Badge.Ribbon
+              className="itemCardBadge"
+              text={`$${product.price}`}
+              color="pink"
+            >
             <Card
              hoverable
               className="itemCard"
+              style={{margin:'5px'}}
               title={product.title}
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
-            </Card>
+            </Card></Badge.Ribbon>
           </List.Item>
         )}
       />
