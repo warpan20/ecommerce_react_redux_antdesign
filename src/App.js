@@ -6,7 +6,7 @@ import Products from './Pages/Home'
 const App = () => (
 <div style={{ display: 'flex', flexDirection: 'column' }}>
     <Header/>
-    <Products/>
+    <Products />
     <Footer/>
   </div>
 );

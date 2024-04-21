@@ -18,7 +18,7 @@ const Products = () => {
 
   return (
     <>
-      <List
+      <List style={{margin:'10px'}}
         grid={{ column: 6 }}
         dataSource={products}
         renderItem={(product, index) => (
