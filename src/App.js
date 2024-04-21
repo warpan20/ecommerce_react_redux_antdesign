@@ -10,8 +10,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => (
 <div style={{ display: 'flex', flexDirection: 'column' }}>
+<Router>
     <Header/>
-    <Router>
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/jewelery" element={<Jewelery />} />
@@ -19,8 +19,8 @@ const App = () => (
         <Route path="/womensclothing" element={<WomensClothing />} />
         <Route path="/electronics" element={<Electronics />} />
       </Routes>
-    </Router>
     <Footer/>
+    </Router>
   </div>
 );
 
