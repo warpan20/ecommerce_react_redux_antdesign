@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
-import Content from './Content/Content'
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
+import Products from './Components/Products/Products'
 
 const App = () => (
-  <div >
+<div style={{ display: 'flex', flexDirection: 'column' }}>
     <Header/>
-    <Content/>
+    <Products/>
     <Footer/>
   </div>
 );
