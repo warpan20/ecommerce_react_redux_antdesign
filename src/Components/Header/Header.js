@@ -1,6 +1,7 @@
-import { Menu, Typography, Badge } from 'antd'
-import {HomeFilled, ShoppingCartOutlined} from '@ant-design/icons';
+import { Menu, Typography } from 'antd'
+import {HomeFilled} from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
+import Cart from '../Cart/Cart';
 
 function Header() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function Header() {
            }>
         </Menu>
         <Typography.Title level={4} style={{marginBottom:'25px'}} >Arpan's Store</Typography.Title>
-        <Badge count={3} style={{marginRight:'10px'}}><ShoppingCartOutlined style={{fontSize:'30px', marginRight:'10px'}}/></Badge>
+        <Cart/>
         </div>);
 }
 
