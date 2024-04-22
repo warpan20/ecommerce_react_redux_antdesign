@@ -1,5 +1,5 @@
 import React , {useEffect} from 'react';
-import { Badge, Card, Image, List, Select, Button, Flex } from 'antd';
+import { Badge, Card, Image, List, Select, Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '../Slices/ProductSlice';
 import { setSortOrder } from '../Slices/SortOrderSlice';
