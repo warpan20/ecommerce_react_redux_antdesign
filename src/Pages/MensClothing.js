@@ -17,7 +17,7 @@ const MensClothing = () => {
   return (
     <>
     <Header/>
-        <Select style={{width: '13%', margin:'10px'}}
+        <Select style={{width: '13%', margin:'5px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
@@ -41,7 +41,7 @@ const MensClothing = () => {
             },
           ]}
         ></Select>
-      <List style={{margin:'10px'}}
+      <List
       loading = {loading}
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder).filter(product => product.category === "men's clothing")}
@@ -54,7 +54,7 @@ const MensClothing = () => {
             >
             <Card
              hoverable
-             style={{margin: '5px'}}
+             style={{margin: '10px'}}
               className="itemCard"
               title={product.title}
               actions={[<Button type="primary">Add to Cart</Button>]} 

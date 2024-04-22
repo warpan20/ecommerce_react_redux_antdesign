@@ -15,7 +15,7 @@ const Electronics = () => {
   return (
     <>
     <Header/>
-         <Select style={{width: '13%', margin:'10px'}}
+         <Select style={{width: '13%', margin:'5px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
@@ -51,7 +51,7 @@ const Electronics = () => {
               color="pink"
             >
             <Card
-            style={{margin:'5px'}}
+            style={{margin:'10px'}}
              hoverable
               className="itemCard"
               title={product.title}

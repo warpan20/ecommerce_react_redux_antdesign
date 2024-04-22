@@ -27,7 +27,7 @@ const Products = () => {
   return (
     <>
     <Header/>
-     <Select style={{width: '13%', margin:'10px'}}
+     <Select style={{width: '13%', margin:'5px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
@@ -66,7 +66,7 @@ const Products = () => {
              hoverable
               className="itemCard"
               title={product.title}
-              style={{margin:'5px'}}
+              style={{margin:'10px'}}
               actions={[<Button type="primary">Add to Cart</Button>]} 
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />

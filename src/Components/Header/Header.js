@@ -1,4 +1,4 @@
-import { Menu, Typography } from 'antd'
+import { Menu, Typography, Badge } from 'antd'
 import {HomeFilled, ShoppingCartOutlined} from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function Header() {
     const onMenuClick = (item) => {
         navigate(`/${item.key}`);
       };
-    return (<div style={{padding:'5px',boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)', display:'flex' , flexDirection: 'row'
+    return (<div style={{height:'48px', boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)', display:'flex' , flexDirection: 'row'
     , alignItems:'center', justifyContent:'space-between'}}> 
            <Menu style={{fontSize:'15px'}}mode="horizontal"  onClick={onMenuClick} items={
             [
@@ -19,8 +19,8 @@ function Header() {
             ]
            }>
         </Menu>
-        <Typography.Title level={4} >Arpan's Store</Typography.Title>
-        <ShoppingCartOutlined style={{fontSize:'30px'}}/>
+        <Typography.Title level={4} style={{marginBottom:'25px'}} >Arpan's Store</Typography.Title>
+        <Badge count={3} style={{marginRight:'10px'}}><ShoppingCartOutlined style={{fontSize:'30px', marginRight:'10px'}}/></Badge>
         </div>);
 }
 
