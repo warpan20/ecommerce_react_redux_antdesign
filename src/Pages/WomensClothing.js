@@ -1,16 +1,16 @@
 
 import React from 'react';
-import { Badge,Card, Image, List , Select} from 'antd';
+import { Badge,Card, Image, List , Select, Button} from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSortOrder } from '../Slices/SortOrderSlice';
 import getSortedItems from '../Utilities/SortItems';
 import Header from '../Components/Header/Header'
 
-
 const WomansClothing = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const sortorder = useSelector((state) => state.sortOrder.sortOrder);
+  const loading = useSelector((state) => state.loadingStatus.loadingStatus);
 
   return (
     <>
@@ -40,6 +40,7 @@ const WomansClothing = () => {
           ]}
         ></Select>
       <List 
+        loading ={loading}
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder).filter(product => product.category === "women's clothing")}
         renderItem={(product, index) => (
@@ -54,6 +55,7 @@ const WomansClothing = () => {
               className="itemCard"
               style={{margin:'5px'}}
               title={product.title}
+              actions={[<Button type="primary">Add to Cart</Button>]} 
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
             </Card></Badge.Ribbon>

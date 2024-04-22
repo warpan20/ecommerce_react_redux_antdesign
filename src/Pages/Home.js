@@ -56,7 +56,6 @@ const Products = () => {
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder)}
         renderItem={(product, index) => (
-          <Flex vertical={true} justify="space-evenly">
           <List.Item key={index}>
               <Badge.Ribbon
               className="itemCardBadge"
@@ -67,16 +66,13 @@ const Products = () => {
              hoverable
               className="itemCard"
               title={product.title}
-              style={{margin:'5px'}} 
+              style={{margin:'5px'}}
+              actions={[<Button type="primary">Add to Cart</Button>]} 
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
-              <Flex justify="center">
-              <Button type="primary" style={{margin:'5px'}}>AddtoCart</Button>
-              </Flex>
             </Card>
             </Badge.Ribbon>
           </List.Item>
-          </Flex>
         )}
       />
     </>

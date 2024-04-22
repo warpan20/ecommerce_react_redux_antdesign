@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Badge,Card, Image, List , Select} from 'antd';
+import { Badge,Card, Image, List , Select, Button} from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSortOrder } from '../Slices/SortOrderSlice';
 import getSortedItems from '../Utilities/SortItems';
@@ -55,6 +55,7 @@ const Electronics = () => {
              hoverable
               className="itemCard"
               title={product.title}
+              actions={[<Button type="primary">Add to Cart</Button>]} 
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
             </Card>
