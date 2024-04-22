@@ -1,5 +1,5 @@
 import React , {useEffect} from 'react';
-import { Badge, Card, Image, List, Select } from 'antd';
+import { Badge, Card, Image, List, Select, Button, Flex } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '../Slices/ProductSlice';
 import { setSortOrder } from '../Slices/SortOrderSlice';
@@ -56,6 +56,7 @@ const Products = () => {
         grid={{ column: 6 }}
         dataSource={getSortedItems(products,sortorder)}
         renderItem={(product, index) => (
+          <Flex vertical={true} justify="space-evenly">
           <List.Item key={index}>
               <Badge.Ribbon
               className="itemCardBadge"
@@ -66,12 +67,16 @@ const Products = () => {
              hoverable
               className="itemCard"
               title={product.title}
-              style={{margin:'5px'}}
+              style={{margin:'5px'}} 
             >
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
+              <Flex justify="center">
+              <Button type="primary" style={{margin:'5px'}}>AddtoCart</Button>
+              </Flex>
             </Card>
             </Badge.Ribbon>
           </List.Item>
+          </Flex>
         )}
       />
     </>
