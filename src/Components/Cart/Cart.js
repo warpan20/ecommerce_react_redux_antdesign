@@ -29,7 +29,17 @@ function Cart(){
                 dataIndex: "quantity"
                }
            ]}
-           dataSource={cartItems} ></Table>
+           dataSource={cartItems} 
+           summary={(data) => {
+            const total = data.reduce((accumulator, current) => {
+              return accumulator + current.price*current.quantity;
+            }, 0);
+            return <span>Total: ${total}</span>;
+          }}
+          
+          >
+
+          </Table>
 
             </Drawer>
             </Badge>
