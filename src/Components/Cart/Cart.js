@@ -6,18 +6,18 @@ import {useState, useEffect} from 'react';
 function Cart(){
 
     const [cartOpenStatus,setCartOpenStatus] = useState(false);
-    const [cartItems, setCartItems] = useState({});
+    const [cartItems, setCartItems] = useState([]);
 
     const fetchCartItems = async () => {
         const response = await fetch('https://fakestoreapi.com/carts/user/2');
         const data = await response.json();
-        setCartItems(data);
+        setCartItems(data[0].products);
     };
     useEffect(() => {fetchCartItems()} , []);
     console.log(cartItems);
     return (
         <div>
-        <Badge count={cartItems[0].products.length} style={{marginRight:'10px', cursor:'pointer'}}>
+        <Badge count={cartItems.length} style={{marginRight:'10px', cursor:'pointer'}}>
             <ShoppingCartOutlined onClick={() => setCartOpenStatus(true)} style={{fontSize:'30px', marginRight:'10px'}}/>
             <Drawer title="My Cart"open={cartOpenStatus} onClose={() => setCartOpenStatus(false)}>
           <Table  columns={[
@@ -29,7 +29,8 @@ function Cart(){
         title:"Quantity"
         , dataIndex: "quantity"
                }
-           ]}  dataSource={cartItems[0].products}></Table>
+           ]}
+           dataSource={cartItems} ></Table>
 
             </Drawer>
             </Badge>
