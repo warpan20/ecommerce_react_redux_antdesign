@@ -21,7 +21,8 @@ function Cart(){
               },
               {
         title:"Price"
-        , dataIndex: "price"
+        , dataIndex: "price",
+        render: (value) =>{ return <span>${value}</span>;}
                },
                {
                 title: "Quantity",
