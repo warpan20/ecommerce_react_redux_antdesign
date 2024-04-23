@@ -17,7 +17,7 @@ const Electronics = () => {
   return (
     <>
     <Header/>
-    <Select style={{width: '160px', margin:'5px'}}
+    <Select style={{width: '160px', margin:'5px', marginTop:'53px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));

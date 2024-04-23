@@ -8,10 +8,13 @@ function Login() {
     const onSubmit = (item) => {
         navigate(`/home`);
       };
-    return <div style={{display:'flex', justifyContent:'right'}}>
-        <Card style={{marginTop:'5%',marginRight:'5%', width:'30%'}}>
-        <div style={{ width:'80%',padding:'5px',margin:'5%', display: 'flex',justifyContent:'right'}}> <Form 
-    style={{ width:'100%', height:'40%', display:'flex', alignItems:'flex-end', flexDirection:'column'}} onFinish={onSubmit}>
+    const loginBoxPos = window.innerWidth > 768 ? 'right': 'center';
+    const loginBoxWidth = window.innerWidth > 768 ? '30%': '60%';
+    return <div style={{display:'flex', justifyContent: loginBoxPos, width: '100%'}}>
+        <Card title="Login Here:" bordered={false} style={{marginTop:'5%',marginRight:'5%',width:loginBoxWidth}}>
+        <div style={{ width: '100%',padding:'5px',margin:'5%', display: 'flex',justifyContent:'right'}}> <Form 
+    style={{ width:'100%', height:'40%', display:'flex', alignItems:'flex-end', flexDirection:'column', 
+    paddingRight:'10px' }} onFinish={onSubmit}>
     <Form.Item
       rules={[
         {

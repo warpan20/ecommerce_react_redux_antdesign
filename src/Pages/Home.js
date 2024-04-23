@@ -29,7 +29,7 @@ const Products = () => {
   return (
     <>
     <Header/>
-     <Select style={{width: '160px', margin:'5px'}}
+     <Select style={{width: '160px', margin:'5px', marginTop:'53px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
@@ -88,7 +88,9 @@ const Products = () => {
                 dispatch(setCartItems(copyOfCartItems));
               }} type="primary">Add to Cart</Button>]} 
             >
+              <div style={{display:'flex', justifyContent:'center'}}>
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
+              </div>
             </Card>
             </Badge.Ribbon>
           </List.Item>
