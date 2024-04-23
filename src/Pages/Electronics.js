@@ -76,7 +76,9 @@ const Electronics = () => {
                 dispatch(setCartItems(copyOfCartItems));
               }} type="primary">Add to Cart</Button>]} 
             >
+              <div style={{display:'flex', justifyContent:'center'}}>
               <Image className="itemCardImage" src={product.image} style={{ width: '100%', height: '200px' }} />
+              </div>
             </Card>
             </Badge.Ribbon>
           </List.Item>
