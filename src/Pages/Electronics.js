@@ -17,26 +17,26 @@ const Electronics = () => {
   return (
     <>
     <Header/>
-         <Select style={{width: '13%', margin:'5px'}}
+    <Select style={{width: '160px', margin:'5px'}}
           defaultValue={sortorder}
           onChange={(value)=>{
             dispatch(setSortOrder(value));
           }}
           options={[
             {
-              label: "Alphabetically a-z",
+              label: "letter a-z",
               value: "az",
             },
             {
-              label: "Alphabetically z-a",
+              label: "letter z-a",
               value: "za",
             },
             {
-              label: "Price Low to High",
+              label: "price low to high",
               value: "lowHigh",
             },
             {
-              label: "Price High to Low",
+              label: "price high to low",
               value: "highLow",
             },
           ]}

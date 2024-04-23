@@ -3,7 +3,6 @@ import {ShoppingCartOutlined} from '@ant-design/icons';
 import {useState} from 'react';
 import { useSelector } from 'react-redux';
 
-
 function Cart(){
 
     const [cartOpenStatus,setCartOpenStatus] = useState(false);

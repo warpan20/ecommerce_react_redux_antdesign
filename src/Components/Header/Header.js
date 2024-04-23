@@ -2,14 +2,16 @@ import { Menu, Typography } from 'antd'
 import {HomeFilled} from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
 import Cart from '../Cart/Cart';
+import './Header.css';
+
 
 function Header() {
     const navigate = useNavigate();
     const onMenuClick = (item) => {
         navigate(`/${item.key}`);
       };
-    return (<div style={{height:'48px', boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)', display:'flex' , flexDirection: 'row'
-    , alignItems:'center', justifyContent:'space-between'}}> 
+    return (<div class="menu" style={{height:'48px', boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)', display:'flex' , flexDirection: 'row'
+    , alignItems:'center', justifyContent:'space-between', overflow:'hidden'}}> 
            <Menu style={{fontSize:'15px'}}mode="horizontal"  onClick={onMenuClick} items={
             [
                 {label: <HomeFilled style={{fontSize:'20px'}}/>,key: "home"},
