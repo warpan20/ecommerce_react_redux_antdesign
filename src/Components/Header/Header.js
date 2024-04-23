@@ -12,7 +12,7 @@ function Header() {
       };
     return (<div class="menu" style={{height:'48px', boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.5)', display:'flex' , flexDirection: 'row'
     , alignItems:'center', justifyContent:'space-between', overflow:'hidden'}}> 
-           <Menu style={{fontSize:'15px'}}mode="horizontal"  onClick={onMenuClick} items={
+           <Menu style={{fontSize:'15px'}}mode="horizontal" inlineCollapsed = {window.innerWidth<=768} onClick={onMenuClick} items={
             [
                 {label: <HomeFilled style={{fontSize:'20px'}}/>,key: "home"},
                 {label: "Electronics",key:"electronics"},
@@ -22,7 +22,7 @@ function Header() {
             ]
            }>
         </Menu>
-        <Typography.Title level={4} style={{marginBottom:'25px'}} >Arpan's Store</Typography.Title>
+        <Typography.Title class="storename" level={4} style={{marginBottom:'25px'}} >Arpan's Store</Typography.Title>
         <Cart/>
         </div>);
 }
