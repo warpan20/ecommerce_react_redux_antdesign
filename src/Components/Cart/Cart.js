@@ -33,7 +33,7 @@ function Cart(){
             const total = data.reduce((accumulator, current) => {
               return accumulator + current.price*current.quantity;
             }, 0);
-            return <span>Total: ${total}</span>;
+            return <span>Total: ${total.toFixed(2)}</span>;
           }}
           
           >
